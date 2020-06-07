@@ -1,0 +1,13 @@
+[Unit]
+Description=Update write-key to provide rpmb block access
+After=rc-local.service
+
+[Service]
+Type=simple
+ExecStartPre=/bin/chmod a+x /etc/rpmb-access.sh
+ExecStart=/bin/sh /etc/rpmb-access.sh
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
