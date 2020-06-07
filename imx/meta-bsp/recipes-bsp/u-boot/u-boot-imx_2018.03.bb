@@ -11,10 +11,10 @@ DEPENDS_append = " python dtc-native"
 LICENSE = "GPLv2+"
 LIC_FILES_CHKSUM = "file://Licenses/gpl-2.0.txt;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 
-UBOOT_SRC ?= "git://github.com/WinSystems/c444-winsys-u-boot-imx.git;protocol=https"
-SRCBRANCH = "master_v2018.03"
+UBOOT_SRC ?= "git://github.com/WinSystems/u-boot-imx8m.git;protocol=https"
+SRCBRANCH = "v2018.03"
 SRC_URI = "${UBOOT_SRC};branch=${SRCBRANCH}"
-SRCREV = "79594fe6af65a63491c630b143dc39cac8912a2d"
+SRCREV = "01a7850416cf7a12693c4889e894e3259a3dc911"
 
 S = "${WORKDIR}/git"
 

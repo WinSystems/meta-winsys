@@ -41,6 +41,3 @@ EXTRA_OEMAKE_append_mx6 = " ARCH=arm"
 EXTRA_OEMAKE_append_mx7 = " ARCH=arm"
 EXTRA_OEMAKE_append_mx8 = " ARCH=arm64"
 
-#KERNEL_DEVICETREE_remove = "freescale/fsl-imx8mm-evk.dtb freescale/fsl-imx8mm-evk-ak4497.dtb "
-#KERNEL_DEVICETREE_remove = "freescale/fsl-imx8mm-evk-m4.dtb freescale/fsl-imx8mm-evk-ak5558.dtb "
-#KERNEL_DEVICETREE_remove = "freescale/fsl-imx8mm-evk-audio-tdm.dtb "
