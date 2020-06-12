@@ -8,6 +8,6 @@ SRCBRANCH = "4.14.78"
 LOCALVERSION = "-${SRCBRANCH}"
 KERNEL_SRC ?= "git://github.com/WinSystems/linux-imx8m.git;protocol=https"
 SRC_URI = "${KERNEL_SRC};branch=${SRCBRANCH}"
-SRCREV = "9babf2cddd48c7aa3570c3769d5b0d36b7a901a0"
+SRCREV = "85de48219d5558d4981e7b5f1cba104d7f9f8263"
 
 S = "${WORKDIR}/git"
