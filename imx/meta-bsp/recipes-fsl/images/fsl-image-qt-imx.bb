@@ -47,6 +47,11 @@ CORE_IMAGE_EXTRA_INSTALL += " \
     ${ERPC_COMPS} \
 "
 
+# Chromium
+IMAGE_INSTALL_append = " \
+    chromium-ozone-wayland \
+"
+
 # OPKG
 IMAGE_INSTALL_append = " \
     opkg \
