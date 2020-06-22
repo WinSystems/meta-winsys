@@ -22,8 +22,7 @@ USERADD_PACKAGES = "${PN}"
 
 # USERADD_PARAM specifies command line options to pass to the
 # useradd command. 
-USERADD_PARAM_${PN} = "-u 1200 -d /home/winsys -r -s /bin/bash -p 'winsys' -G weston-launch,video winsys;"
-#USERADD_PARAM = "-u 1200 -d /home/winsys -r -s /bin/bash -p 'winsys' -G weston-launch,video,disk,tty winsys;"
+USERADD_PARAM_${PN} = "-u 1200 -d /home/winsys -r -s /bin/bash -P 'winsys' -G weston-launch,video winsys;"
 
 RDEPENDS_${PN} += " bash "
 
