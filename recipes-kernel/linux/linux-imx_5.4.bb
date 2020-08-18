@@ -15,7 +15,7 @@ DEPENDS += "lzop-native bc-native"
 KERNEL_BRANCH ?= "5.4.24"
 LOCALVERSION = "-2.1.0"
 
-KERNEL_SRC ?= "https://github.com/WinSystems/linux-imx8m/tree/5.4.24;protocol=https"
+KERNEL_SRC ?= "git://github.com/WinSystems/linux-imx8m.git;protocol=https"
 SRC_URI = "${KERNEL_SRC};branch=${KERNEL_BRANCH}"
 
 SRCREV = "${AUTOREV}"
