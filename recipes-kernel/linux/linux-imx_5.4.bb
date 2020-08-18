@@ -12,15 +12,13 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=bbea815ee2795b2f4230826c0c6b8814"
 
 DEPENDS += "lzop-native bc-native"
 
-#TJS: KERNEL_BRANCH ?= "imx_5.4.24_2.1.0"
 KERNEL_BRANCH ?= "5.4.24"
 LOCALVERSION = "-2.1.0"
 
-#TJS: KERNEL_SRC ?= "git://source.codeaurora.org/external/imx/linux-imx.git;protocol=https"
 KERNEL_SRC ?= "https://github.com/WinSystems/linux-imx8m/tree/5.4.24;protocol=https"
 SRC_URI = "${KERNEL_SRC};branch=${KERNEL_BRANCH}"
 
-SRCREV = "babac008e5cf168abca1a85bda2e8071ca27a5c0"
+SRCREV = "${AUTOREV}"
 
 FILES_${KERNEL_PACKAGE_NAME}-base += "${nonarch_base_libdir}/modules/${KERNEL_VERSION}/modules.builtin.modinfo "
 
