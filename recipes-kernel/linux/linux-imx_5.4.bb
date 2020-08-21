@@ -45,8 +45,8 @@ do_copy_defconfig () {
     else
         # copy latest imx_v8_defconfig to use for mx8
         mkdir -p ${B}
-        cp ${S}/arch/arm64/configs/imx_v8_defconfig ${B}/.config
-        cp ${S}/arch/arm64/configs/imx_v8_defconfig ${B}/../defconfig
+        cp ${S}/arch/arm64/configs/defconfig ${B}/.config
+        cp ${S}/arch/arm64/configs/defconfig ${B}/../defconfig
     fi
 }
 
