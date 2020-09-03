@@ -18,7 +18,6 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 	htop \
 	stress-ng \
 	glmark2 \
-	coreutils \
 	util-linux \
 	util-linux-hwclock \
 	wget \
@@ -26,4 +25,10 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 	u-boot-imx-fw-utils \
 	less \
 	nano \
+	gnupg \
+	openssh-sshd \
+	openssh-sftp \
+	openssh-sftp-server \
 "
+
+IMAGE_FEATURES += " ssh-server-openssh "
