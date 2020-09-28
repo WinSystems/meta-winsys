@@ -9,6 +9,7 @@ inherit pythonnative
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 PROVIDES += "u-boot"
+RPROVIDES_${PN} += "u-boot"
 DEPENDS_append = " dtc-native"
 
 LICENSE = "GPLv2+"

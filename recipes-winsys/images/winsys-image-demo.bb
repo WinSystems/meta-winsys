@@ -22,13 +22,34 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 	util-linux-hwclock \
 	wget \
 	packagegroup-security-tpm2 \
-	u-boot-imx-fw-utils \
+	u-boot-fw-utils \
 	less \
 	nano \
 	gnupg \
 	openssh-sshd \
 	openssh-sftp \
 	openssh-sftp-server \
+	ptpd \
+	parted \
+	vim \
+	chromium-ozone-wayland \
+	sudo \
+	ptpd \
+	vim \
+	packagegroup-tools-bluetooth \
+	packagegroup-fsl-tools-audio \
+	packagegroup-fsl-tools-gpu \
+	packagegroup-fsl-tools-gpu-external \
+	packagegroup-fsl-tools-testapps \
+	packagegroup-fsl-tools-benchmark \
+	packagegroup-fsl-gstreamer1.0 \
+	packagegroup-fsl-gstreamer1.0-full \
+	gdb \
+	libfftw \
 "
+IMAGE_INSTALL_remove += " packagegroup-imx-ml "
+
+
+IMAGE_INSTALL_append = " useradd-winsys "
 
 IMAGE_FEATURES += " ssh-server-openssh "
