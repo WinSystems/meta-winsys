@@ -4,6 +4,7 @@
 DESCRIPTION = "i.MX U-Boot suppporting i.MX reference boards."
 require u-boot-common.inc
 require recipes-bsp/u-boot/u-boot.inc
+require recipes-bsp/u-boot/u-boot-mender.inc
 inherit pythonnative
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
@@ -29,6 +30,9 @@ inherit fsl-u-boot-localversion
 LOCALVERSION ?= "-5.4.24-2.1.0"
 
 BOOT_TOOLS = "imx-boot-tools"
+
+BOOTENV_SIZE = "0x1000"
+MENDER_UBOOT_PRE_SETUP_COMMANDS = " setenv kernel_addr_r \${loadaddr}; setenv bootargs rootwait rw "
 
 do_deploy_append_mx8m () {
     # Deploy u-boot-nodtb.bin and fsl-imx8mq-XX.dtb, to be packaged in boot binary by imx-boot
