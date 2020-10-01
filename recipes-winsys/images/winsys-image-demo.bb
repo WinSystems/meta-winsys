@@ -46,7 +46,19 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 	packagegroup-fsl-gstreamer1.0-full \
 	gdb \
 	libfftw \
+	bmap-tools \
+	alsa-equal \
+	alsa-lib \
+	alsa-oss \
+	alsa-plugins \
+	alsa-state \
+	alsa-tools \
+	alsa-utils \
+	alsa-utils-scripts \
+	gparted \
+	gedit \
 "
+
 IMAGE_INSTALL_remove += " packagegroup-imx-ml "
 
 
