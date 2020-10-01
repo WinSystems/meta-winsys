@@ -1,5 +1,5 @@
-SUMMARY = "Adds the user win"
-DESCRIPTION = "Recipe for adding the default user win to the image"
+SUMMARY = "Adds the user winsys"
+DESCRIPTION = "Recipe for adding the default user winsys to the image"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"
 
@@ -28,7 +28,7 @@ USERADD_PACKAGES = "${PN}"
 
 # USERADD_PARAM specifies command line options to pass to the
 # useradd command. 
-USERADD_PARAM_${PN} = "-u 1200 -d /home/win -r -s /bin/bash -P 'winsys' -G video,weston-launch,sudo winsys;"
+USERADD_PARAM_${PN} = "-u 1200 -d /home/winsys -r -s /bin/bash -P 'winsys' -G video,weston-launch,sudo winsys;"
 
 do_install () {
         install -d -m 755 ${D}${datadir}/winsys
