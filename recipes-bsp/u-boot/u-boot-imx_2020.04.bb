@@ -20,7 +20,7 @@ UBOOT_SRC ?= "git://github.com/WinSystems/u-boot-imx8m.git;protocol=https"
 SRCBRANCH = "v2020.04"
 SRC_URI = "${UBOOT_SRC};branch=${SRCBRANCH} \
 "
-SRCREV = "${AUTOREV}"
+SRCREV = "9430821af77211fb4ac6489f7e847c3e930a0ad8"
 # SRCREV = "4979a99482f7e04a3c1f4fb55e3182395ee8f710"
 
 S = "${WORKDIR}/git"
@@ -32,7 +32,7 @@ LOCALVERSION ?= "-5.4.24-2.1.0"
 BOOT_TOOLS = "imx-boot-tools"
 
 BOOTENV_SIZE = "0x1000"
-MENDER_UBOOT_PRE_SETUP_COMMANDS = " setenv kernel_addr_r \${loadaddr}; setenv bootargs rootwait rw "
+MENDER_UBOOT_PRE_SETUP_COMMANDS = " setenv kernel_addr_r \${loadaddr}; setenv bootargs rootwait rw fsck.mode=auto fsck.repair=yes "
 
 do_deploy_append_mx8m () {
     # Deploy u-boot-nodtb.bin and fsl-imx8mq-XX.dtb, to be packaged in boot binary by imx-boot
