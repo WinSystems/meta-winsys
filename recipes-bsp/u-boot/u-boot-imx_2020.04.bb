@@ -18,9 +18,11 @@ LIC_FILES_CHKSUM = "file://Licenses/gpl-2.0.txt;md5=b234ee4d69f5fce4486a80fdaf4a
 UBOOT_SRC ?= "git://github.com/WinSystems/u-boot-imx8m.git;protocol=https"
 SRCBRANCH = "v2020.04"
 SRC_URI = "${UBOOT_SRC};branch=${SRCBRANCH} \
+	   file://2GB_4GB_support.patch \
 "
+
 SRCREV = "${AUTOREV}"
-# SRCREV = "4979a99482f7e04a3c1f4fb55e3182395ee8f710"
+#SRCREV = "ed70b37974819a17216b87ca2d9fdfbdb419050e"
 
 S = "${WORKDIR}/git"
 

@@ -1,0 +1,56 @@
+commit 19e759cddbc0936c674785c115954a30792d5917
+Author: Brendan Krieger <bkrieger@winsystems.com>
+Date:   Tue Oct 20 20:50:07 2020 +0000
+
+    Patching for 2GB and 4GB support
+
+diff --git a/arch/arm/mach-imx/imx8m/soc.c b/arch/arm/mach-imx/imx8m/soc.c
+index 0da837693a..a26159da61 100644
+--- a/arch/arm/mach-imx/imx8m/soc.c
++++ b/arch/arm/mach-imx/imx8m/soc.c
+@@ -208,12 +208,15 @@ __weak int board_phys_sdram_size(phys_size_t *size)
+ 
+ int dram_init(void)
+ {
++
++        unsigned int val;
+ 	phys_size_t sdram_size;
+-	int ret;
++       fuse_read(9, 2, &val);
+ 
+-	ret = board_phys_sdram_size(&sdram_size);
+-	if (ret)
+-		return ret;
++	if (val & 0x1)
++		sdram_size = 0x80000000; /* 2GB */
++	else
++		sdram_size = 0x100000000; /* 4GB */
+ 
+ 	/* rom_pointer[1] contains the size of TEE occupies */
+ 	if (rom_pointer[1])
+@@ -233,10 +236,14 @@ int dram_init_banksize(void)
+ 	int bank = 0;
+ 	int ret;
+ 	phys_size_t sdram_size;
++        unsigned int val;
+ 
+-	ret = board_phys_sdram_size(&sdram_size);
+-	if (ret)
+-		return ret;
++       fuse_read(9, 2, &val);
++
++	if (val & 0x1)
++		sdram_size = 0x80000000; /* 2GB */
++	else
++		sdram_size = 0x100000000; /* 4GB */
+ 
+ 	gd->bd->bi_dram[bank].start = PHYS_SDRAM;
+ 	if (rom_pointer[1]) {
+@@ -251,7 +258,6 @@ int dram_init_banksize(void)
+ 				printf("rom_pointer 0: %x\n rom_pointer 1: %x\n", optee_start, optee_size);
+ 				return -1;
+ 			}
+-			printf("optee start: %x\n optee size: %x\n", optee_start, optee_size);
+ 			gd->bd->bi_dram[bank].start = optee_start + optee_size;
+ 			gd->bd->bi_dram[bank].size = PHYS_SDRAM +
+ 				sdram_size - gd->bd->bi_dram[bank].start;

@@ -57,6 +57,8 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 	alsa-utils-scripts \
 	gparted \
 	gedit \
+	packagegroup-qt5-imx \
+	packagegroup-qt5-webengine \
 "
 
 IMAGE_INSTALL_remove += " packagegroup-imx-ml "
