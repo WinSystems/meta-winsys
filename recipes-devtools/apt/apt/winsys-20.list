@@ -1,0 +1,5 @@
+deb [trusted=yes] http://packages.winsystems.com/all ./
+deb [trusted=yes] http://packages.winsystems.com/aarch64 ./
+deb [trusted=yes] http://packages.winsystems.com/aarch64-mx8m ./
+deb [trusted=yes] http://packages.winsystems.com/imx8mq_itx_p_c444 ./
+

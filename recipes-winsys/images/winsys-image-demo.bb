@@ -45,6 +45,7 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 	packagegroup-fsl-gstreamer1.0 \
 	packagegroup-fsl-gstreamer1.0-full \
 	gdb \
+	python3-pip \
 	libfftw \
 	bmap-tools \
 	alsa-equal \
@@ -57,6 +58,11 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 	alsa-utils-scripts \
 	gparted \
 	gedit \
+	qt5everywheredemo \
+	qtmultimedia \
+	qtcharts \
+	qtdatavis3d \
+	qtwebkit \
 	packagegroup-qt5-imx \
 	packagegroup-qt5-webengine \
 "
