@@ -104,23 +104,23 @@ if [ -z "$MACHINE" ]; then
     MACHINE='imx8mq-itx-p-c444'
 fi
 
-case $MACHINE in
-imx8*)
-    case $DISTRO in
-    *wayland)
-        : ok
-        ;;
-    *)
-        echo -e "\n ERROR - Only Wayland distros are supported for i.MX 8 or i.MX 8M"
-        echo -e "\n"
-        return 1
-        ;;
-    esac
-    ;;
-*)
-    : ok
-    ;;
-esac
+#case $MACHINE in
+#imx8*)
+#    case $DISTRO in
+#    *wayland)
+#        : ok
+#        ;;
+#    *)
+#        echo -e "\n ERROR - Only Wayland distros are supported for i.MX 8 or i.MX 8M"
+#        echo -e "\n"
+#        return 1
+#        ;;
+#    esac
+#    ;;
+#*)
+#    : ok
+#    ;;
+#esac
 
 # Cleanup previous meta-freescale/EULA overrides
 cd $CWD/sources/meta-freescale
@@ -188,8 +188,11 @@ echo "BBLAYERS += \"\${BSPDIR}/sources/meta-openembedded/meta-gnome\"" >> $BUILD
 echo "BBLAYERS += \"\${BSPDIR}/sources/meta-openembedded/meta-perl \"" >> $BUILD_DIR/conf/bblayers.conf
 echo "BBLAYERS += \"\${BSPDIR}/sources/meta-openembedded/meta-networking\"" >> $BUILD_DIR/conf/bblayers.conf
 echo "BBLAYERS += \"\${BSPDIR}/sources/meta-openembedded/meta-filesystems\"" >> $BUILD_DIR/conf/bblayers.conf
+echo "BBLAYERS += \"\${BSPDIR}/sources/meta-openembedded/meta-initramfs\"" >> $BUILD_DIR/conf/bblayers.conf
 
 echo "BBLAYERS += \"\${BSPDIR}/sources/meta-qt5\"" >> $BUILD_DIR/conf/bblayers.conf
+echo "BBLAYERS += \"\${BSPDIR}/sources/meta-boot2qt/meta-boot2qt\"" >> $BUILD_DIR/conf/bblayers.conf
+echo "BBLAYERS += \"\${BSPDIR}/sources/meta-boot2qt/meta-boot2qt-distro\"" >> $BUILD_DIR/conf/bblayers.conf
 echo "BBLAYERS += \"\${BSPDIR}/sources/meta-python2\"" >> $BUILD_DIR/conf/bblayers.conf
 echo "BBLAYERS += \"\${BSPDIR}/sources/meta-security/meta-tpm\"" >> $BUILD_DIR/conf/bblayers.conf
 echo "BBLAYERS += \"\${BSPDIR}/sources/meta-winsys\"" >> $BUILD_DIR/conf/bblayers.conf
