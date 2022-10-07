@@ -43,7 +43,7 @@ PREFERRED_PROVIDER_virtual/xserver = "xserver-xorg"
 XSERVER_DRIVER                  = "xf86-video-fbdev"
 XSERVER_DRIVER_imxgpu2d         = "xf86-video-imx-vivante"
 XSERVER_DRIVER_vf               = "xf86-video-modesetting"
-XSERVER_DRIVER_append_mx8       = " xf86-video-modesetting"
+XSERVER_DRIVER:append:mx8       = " xf86-video-modesetting"
 XSERVER_DRIVER_use-mainline-bsp = "xf86-video-armada"
 XSERVER = "xserver-xorg \
            xf86-input-evdev \
@@ -135,19 +135,19 @@ MACHINE_SOCARCH_SUFFIX_mx8qxp = "-mx8"
 MACHINE_SOCARCH_SUFFIX_use-mainline-bsp = "-imx"
 
 MACHINE_ARCH_FILTER = "virtual/kernel"
-MACHINE_SOCARCH_FILTER_append_imx = " \
+MACHINE_SOCARCH_FILTER:append:imx = " \
     alsa-lib \
     gstreamer1.0 \
     weston \
 "
-MACHINE_SOCARCH_FILTER_append_imxvpu = " \
+MACHINE_SOCARCH_FILTER:append:imxvpu = " \
     imx-codec \
     imx-parser \
     imx-vpuwrap \
     libimxvpuapi \
     virtual/imxvpu \
 "
-MACHINE_SOCARCH_FILTER_append_imxgpu = " \
+MACHINE_SOCARCH_FILTER:append:imxgpu = " \
     virtual/egl \
     virtual/mesa \
     virtual/libopenvg \
@@ -156,15 +156,15 @@ MACHINE_SOCARCH_FILTER_append_imxgpu = " \
     libgal-imx \
     pango \
 "
-MACHINE_SOCARCH_FILTER_append_imxgpu2d = " \
+MACHINE_SOCARCH_FILTER:append:imxgpu2d = " \
     virtual/libg2d \
 "
-MACHINE_SOCARCH_FILTER_append_imxgpu3d = " \
+MACHINE_SOCARCH_FILTER:append:imxgpu3d = " \
     virtual/libgl \
     virtual/libgles1 \
     virtual/libgles2 \
 "
-MACHINE_SOCARCH_FILTER_append_use-mainline-bsp = " \
+MACHINE_SOCARCH_FILTER:append:use-mainline-bsp = " \
     virtual/egl \
     virtual/libopenvg \
     virtual/libg2d \
@@ -176,21 +176,21 @@ MACHINE_SOCARCH_FILTER_append_use-mainline-bsp = " \
     pango \
     qtbase \
 "
-MACHINE_SOCARCH_FILTER_append_mx6q = " \
+MACHINE_SOCARCH_FILTER:append:mx6q = " \
     virtual/opencl-icd \
     opencl-headers \
 "
-MACHINE_SOCARCH_FILTER_append_mx8 = " \
+MACHINE_SOCARCH_FILTER:append:mx8 = " \
     virtual/opencl-icd \
     opencl-headers \
 "
-MACHINE_SOCARCH_FILTER_append_mx8qm = " \
+MACHINE_SOCARCH_FILTER:append:mx8qm = " \
     virtual/libopenvx \
 "
 
 INHERIT += "fsl-dynamic-packagearch"
 
-SIGGEN_EXCLUDE_SAFE_RECIPE_DEPS_append = " \
+SIGGEN_EXCLUDE_SAFE_RECIPE_DEPS:append = " \
     imx-gpu-viv->kernel-module-imx-gpu-viv \
     libimxvpuapi->virtual/imxvpu \
     imx-vpuwrap->virtual/imxvpu \
@@ -200,32 +200,32 @@ SIGGEN_EXCLUDE_SAFE_RECIPE_DEPS_append = " \
 
 # Firmware
 MACHINE_FIRMWARE ?= ""
-MACHINE_FIRMWARE_append_mx25 = " firmware-imx-sdma-imx25"
-MACHINE_FIRMWARE_append_mx7d = " linux-firmware-imx-sdma-imx7d firmware-imx-epdc"
-MACHINE_FIRMWARE_append_mx6 = " linux-firmware-imx-sdma-imx6q"
-MACHINE_FIRMWARE_append_mx6q = " firmware-imx-vpu-imx6q"
-MACHINE_FIRMWARE_append_mx6dl = " firmware-imx-vpu-imx6d firmware-imx-epdc"
-MACHINE_FIRMWARE_append_mx6sl = " firmware-imx-epdc"
-MACHINE_FIRMWARE_append_mx6sll = " firmware-imx-epdc"
-MACHINE_FIRMWARE_append_mx6ull = " firmware-imx-epdc"
-MACHINE_FIRMWARE_append_mx53 = " firmware-imx-vpu-imx53 firmware-imx-sdma-imx53"
-MACHINE_FIRMWARE_append_mx51 = " firmware-imx-vpu-imx51 firmware-imx-sdma-imx51"
-MACHINE_FIRMWARE_append_mx8qxp = " firmware-imx-vpu-imx8qxp"
-MACHINE_FIRMWARE_append_use-mainline-bsp = " linux-firmware-imx-sdma-imx6q linux-firmware-imx-sdma-imx7d firmware-imx-vpu-imx6q firmware-imx-vpu-imx6d"
+MACHINE_FIRMWARE:append:mx25 = " firmware-imx-sdma-imx25"
+MACHINE_FIRMWARE:append:mx7d = " linux-firmware-imx-sdma-imx7d firmware-imx-epdc"
+MACHINE_FIRMWARE:append:mx6 = " linux-firmware-imx-sdma-imx6q"
+MACHINE_FIRMWARE:append:mx6q = " firmware-imx-vpu-imx6q"
+MACHINE_FIRMWARE:append:mx6dl = " firmware-imx-vpu-imx6d firmware-imx-epdc"
+MACHINE_FIRMWARE:append:mx6sl = " firmware-imx-epdc"
+MACHINE_FIRMWARE:append:mx6sll = " firmware-imx-epdc"
+MACHINE_FIRMWARE:append:mx6ull = " firmware-imx-epdc"
+MACHINE_FIRMWARE:append:mx53 = " firmware-imx-vpu-imx53 firmware-imx-sdma-imx53"
+MACHINE_FIRMWARE:append:mx51 = " firmware-imx-vpu-imx51 firmware-imx-sdma-imx51"
+MACHINE_FIRMWARE:append:mx8qxp = " firmware-imx-vpu-imx8qxp"
+MACHINE_FIRMWARE:append:use-mainline-bsp = " linux-firmware-imx-sdma-imx6q linux-firmware-imx-sdma-imx7d firmware-imx-vpu-imx6q firmware-imx-vpu-imx6d"
 
 # FIXME: Needs addition of firmware-imx of official BSPs
-#MACHINE_FIRMWARE_append_mx27 = " firmware-imx-vpu-imx27"
+#MACHINE_FIRMWARE:append:mx27 = " firmware-imx-vpu-imx27"
 
 MACHINE_EXTRA_RRECOMMENDS += "${MACHINE_FIRMWARE}"
 
 # Extra audio support
-MACHINE_EXTRA_RRECOMMENDS_append_mx6 = " ${@bb.utils.contains('DISTRO_FEATURES', 'alsa', 'imx-alsa-plugins', '', d)}"
-MACHINE_EXTRA_RRECOMMENDS_append_mx7 = " ${@bb.utils.contains('DISTRO_FEATURES', 'alsa', 'imx-alsa-plugins', '', d)}"
-MACHINE_EXTRA_RRECOMMENDS_append_mx8 = " ${@bb.utils.contains('DISTRO_FEATURES', 'alsa', 'imx-alsa-plugins', '', d)}"
+MACHINE_EXTRA_RRECOMMENDS:append:mx6 = " ${@bb.utils.contains('DISTRO_FEATURES', 'alsa', 'imx-alsa-plugins', '', d)}"
+MACHINE_EXTRA_RRECOMMENDS:append:mx7 = " ${@bb.utils.contains('DISTRO_FEATURES', 'alsa', 'imx-alsa-plugins', '', d)}"
+MACHINE_EXTRA_RRECOMMENDS:append:mx8 = " ${@bb.utils.contains('DISTRO_FEATURES', 'alsa', 'imx-alsa-plugins', '', d)}"
 
 # Extra QCA Wi-Fi & BTE driver and firmware
-MACHINE_EXTRA_RRECOMMENDS_append = " ${@bb.utils.contains('MACHINE_FEATURES', 'qca6174', 'packagegroup-fsl-qca6174', '', d)}"
-MACHINE_EXTRA_RRECOMMENDS_append = " ${@bb.utils.contains('MACHINE_FEATURES', 'qca9377', 'packagegroup-fsl-qca9377', '', d)}"
+MACHINE_EXTRA_RRECOMMENDS:append = " ${@bb.utils.contains('MACHINE_FEATURES', 'qca6174', 'packagegroup-fsl-qca6174', '', d)}"
+MACHINE_EXTRA_RRECOMMENDS:append = " ${@bb.utils.contains('MACHINE_FEATURES', 'qca9377', 'packagegroup-fsl-qca9377', '', d)}"
 
 # Extra udev rules
 MACHINE_EXTRA_RRECOMMENDS += "udev-rules-imx"
@@ -324,7 +324,7 @@ WKS_FILE_DEPENDS ?= " \
     ${@bb.utils.contains('MACHINE_FEATURES', 'optee', '${OPTEE_WKS_FILE_DEPENDS}', '', d)} \
 "
 
-WKS_FILE_DEPENDS_append_mx8 = " imx-boot "
+WKS_FILE_DEPENDS:append:mx8 = " imx-boot "
 
 SOC_DEFAULT_WKS_FILE ?= "imx-uboot-bootpart.wks.in"
 SOC_DEFAULT_WKS_FILE_mx8 ?= "imx-imx-boot-bootpart.wks.in"
@@ -334,7 +334,7 @@ WKS_FILE ?= "${SOC_DEFAULT_WKS_FILE}"
 
 # Certain machines override the default fsl u-boot with the
 # fslc u-boot. To restore the fsl u-boot, add use-fsl-bsp like this:
-#   MACHINEOVERRIDES_prepend_imx6ulevk = "use-fsl-bsp:"
+#   MACHINEOVERRIDES:prepend:imx6ulevk = "use-fsl-bsp:"
 UBOOT_MAKE_TARGET_use-fsl-bsp_mx6 = "u-boot.imx"
 UBOOT_SUFFIX_use-fsl-bsp_mx6 = "imx"
 SPL_BINARY_use-fsl-bsp_mx6 = ""
@@ -355,4 +355,4 @@ MACHINE_FEATURES = "usbgadget usbhost vfat alsa touchscreen"
 # Add the ability to specify _imx machines
 MACHINEOVERRIDES =. "imx:"
 
-HOSTTOOLS_NONFATAL_append_mx8 = " sha384sum"
+HOSTTOOLS_NONFATAL:append:mx8 = " sha384sum"
