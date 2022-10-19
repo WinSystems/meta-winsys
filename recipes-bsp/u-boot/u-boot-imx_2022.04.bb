@@ -13,7 +13,6 @@ LIC_FILES_CHKSUM = "file://Licenses/gpl-2.0.txt;md5=b234ee4d69f5fce4486a80fdaf4a
 UBOOT_SRC ?= "git://github.com/WinSystems/uboot-imx.git;protocol=https"
 SRCBRANCH = "lf_v2022.04"
 SRC_URI = "${UBOOT_SRC};branch=${SRCBRANCH}"
-SRC_URI[sha256sum] = "f6a27b14c1adbde4c59cc4d3587be0a77f520124d772e897273a818577be1c56"
 SRCREV = "5220550680e2fb6aaaf44d254d249367dafb7947"
 LOCALVERSION = "-${SRCBRANCH}"
 
@@ -22,7 +21,7 @@ DEPENDS += "flex-native bison-native bc-native dtc-native gnutls-native"
 S = "${WORKDIR}/git"
 B = "${WORKDIR}/build"
 
-# inherit fsl-u-boot-localversion
+inherit fsl-u-boot-localversion
 
 BOOT_TOOLS = "imx-boot-tools"
 
