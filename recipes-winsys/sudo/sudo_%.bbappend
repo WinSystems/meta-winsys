@@ -2,7 +2,7 @@
 # Finalize sudo accesses for AUTHORIZED_USER_NAME
 AUTHORIZED_USER_NAME ?= "winsys"
 
-do_install_append () {
+do_install:append () {
    # Add sudo accesses for user.
     install -d -m 0710 "${D}/etc/sudoers.d"
     echo "${AUTHORIZED_USER_NAME} ALL=(ALL) ALL" > "${D}/etc/sudoers.d/0001_${AUTHORIZED_USER_NAME}"

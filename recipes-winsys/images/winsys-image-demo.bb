@@ -4,7 +4,9 @@ demos and lots of applications. This creates a very large image, not \
 suitable for production."
 LICENSE = "MIT"
 
-require dynamic-layers/qt5-layer/recipes-fsl/images/imx-image-full.bb
+#recipes-fsl/images/imx-image-core.bb
+#require dynamic-layers/qt5-layer/recipes-fsl/images/imx-image-full.bb
+require dynamic-layers/qt6-layer/recipes-fsl/images/imx-image-full.bb
 
 ### WARNING: This image is NOT suitable for production use and is intended
 ###          to provide a way for users to reproduce the image used during
@@ -32,7 +34,6 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 	ptpd \
 	parted \
 	vim \
-	chromium-ozone-wayland \
 	sudo \
 	ptpd \
 	vim \
@@ -58,18 +59,15 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 	alsa-utils-scripts \
 	gparted \
 	gedit \
-	qt5everywheredemo \
 	qtmultimedia \
 	qtcharts \
 	qtdatavis3d \
-	qtwebkit \
-	packagegroup-qt5-imx \
-	packagegroup-qt5-webengine \
+	packagegroup-qt6-imx \
 "
 
-IMAGE_INSTALL_remove += " packagegroup-imx-ml "
+IMAGE_INSTALL:remove += "docker packagegroup-imx-ml "
+RDEPENDS:remove += "nxp-demo-experience"
 
-
-IMAGE_INSTALL_append = " useradd-winsys "
+IMAGE_INSTALL:append = " useradd-winsys "
 
 IMAGE_FEATURES += " ssh-server-openssh "
