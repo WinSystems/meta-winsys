@@ -1,5 +1,7 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+# Copyright 2017-2022 NXP
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-SRC_URI += " \
-		file://0001-Add-correct-DTB-to-makefile-for-patch-generation.patch \
-		"
+require imx-mkimage_git.inc
+
+
+ATF_MACHINE_NAME = "bl31-imx8mq.bin"
