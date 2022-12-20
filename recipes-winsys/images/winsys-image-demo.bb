@@ -58,6 +58,7 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 	alsa-utils \
 	alsa-utils-scripts \
 	gparted \
+	pavucontrol \
 	gedit \
 	qtmultimedia \
 	qtcharts \
@@ -68,6 +69,6 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 IMAGE_INSTALL:remove += "docker packagegroup-imx-ml "
 RDEPENDS:remove += "nxp-demo-experience"
 
-IMAGE_INSTALL:append = " useradd-winsys "
+IMAGE_INSTALL:append = " useradd-winsys python3-gpiod "
 
 IMAGE_FEATURES += " ssh-server-openssh "
