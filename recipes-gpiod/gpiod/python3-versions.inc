@@ -1,0 +1,1 @@
+PREFERRED_VERSION_python3-gpiod = "1.5.3"
