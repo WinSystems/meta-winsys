@@ -1,12 +1,7 @@
-FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
-SRC_URI:append = " file://imx8mq-itx-p-c444.dts"
-SRC_URI:append = " file://imx8mq-itx-p-c444.dtsi"
-SRC_URI:append = " file://imx8mq-itx-p-c444-lvds-auo.dts"
-
-do_configure:append(){
-    cp ${WORKDIR}/imx8mq-itx-p-c444.dts ${S}/arch/arm64/boot/dts/freescale/
-    cp ${WORKDIR}/imx8mq-itx-p-c444.dtsi ${S}/arch/arm64/boot/dts/freescale/
-    cp ${WORKDIR}/imx8mq-itx-p-c444-lvds-auo.dts ${S}/arch/arm64/boot/dts/freescale/
-    echo "dtb-$(CONFIG_ARCH_MXC) += imx8mq-itx-p-c444.dtb" >> ${S}/arch/arm64/boot/dts/freescale/Makefile
-    echo "dtb-$(CONFIG_ARCH_MXC) += imx8mq-itx-p-c444-lvds-auo.dts" >> ${S}/arch/arm64/boot/dts/freescale/Makefile
-}
+FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+SRC_URI += " file://0001-Add-C444-device-tree.patch \
+    file://0002-Enable-USB-and-LVDS-Bridge-drivers.patch \ 
+    file://0003-Set-connector-and-BUS-format.patch \
+    file://0004-Use-different-driver-to-fix-audio-issues.patch \
+    file://0005-Fix-RS285-RST-active-low-issue.patch \
+    file://0006-Enable-TPM.patch"

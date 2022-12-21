@@ -1,0 +1,86 @@
+From bd8be95597667c2545bf91d6c43cfad41c289944 Mon Sep 17 00:00:00 2001
+From: Benjamin Herrera Navarro <bherreranavarro@winsystems.com>
+Date: Tue, 20 Dec 2022 16:59:05 +0000
+Subject: [PATCH 5/6] Fix RS285 RST active low issue
+
+---
+ .../boot/dts/freescale/imx8mq-itx-p-c444.dts  | 28 +++++++++++++++----
+ 1 file changed, 22 insertions(+), 6 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/freescale/imx8mq-itx-p-c444.dts b/arch/arm64/boot/dts/freescale/imx8mq-itx-p-c444.dts
+index 41461d9671a8..610285517d24 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mq-itx-p-c444.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mq-itx-p-c444.dts
+@@ -454,6 +454,7 @@ ethphy0: ethernet-phy@3 {
+         };
+ };
+ 
++//Uncomment to test SPI on test board
+ // spi: &ecspi1 {
+ // 	#address-cells = <1>;
+ // 	#size-cells = <0>;
+@@ -478,6 +479,7 @@ ethphy0: ethernet-phy@3 {
+ 	
+ // };
+ 
++
+ tpm_dev: &ecspi2 {
+ 	#address-cells = <1>;
+ 	#size-cells = <0>;
+@@ -613,12 +615,17 @@ i2c_rtc: rtc@56 {
+ 
+ };
+ 
+-&i2c2 {
+-        clock-frequency = <100000>;
+-        pinctrl-names = "default";
+-        pinctrl-0 = <&pinctrl_i2c2>;
+-        status = "disabled";
+-};
++//Uncomment to test gyro on test board
++// &i2c2 {
++//         clock-frequency = <100000>;
++//         pinctrl-names = "default";
++//         pinctrl-0 = <&pinctrl_i2c2>;
++//         status = "okay";
++//    	l3g4200d: gyroscope@34 {
++//                 compatible = "st,l3g4200d-gyro";
++//                 reg = <0x34>;
++//     };
++// };
+ 
+ &i2c3 {
+         clock-frequency = <100000>;
+@@ -644,6 +651,11 @@ ov5645_mipi1_ep: endpoint {
+                         };
+                 };
+         };
++        //Uncomment to test gyro on test board
++   	// l3g4200d: gyroscope@34 {
++        //         compatible = "st,l3g4200d-gyro";
++        //         reg = <0x34>;
++        // };
+ };
+ 
+ i210_enet_controller: &pcie0{
+@@ -694,6 +706,8 @@ multi_protocol_serial2: &uart1 {
+ 	assigned-clock-parents = <&clk IMX8MQ_CLK_25M>;
+ 	cts-gpios = <&gpio5 27 GPIO_ACTIVE_LOW>;
+ 	rts-gpios = <&gpio5 26 GPIO_ACTIVE_LOW>;
++        rs485-rts-active-low = <0>;
++        rs485-rx-during-tx = <1>;
+ 	status = "okay";
+ };
+ 
+@@ -704,6 +718,8 @@ multi_protocol_serial1: &uart2 {
+         assigned-clock-parents = <&clk IMX8MQ_CLK_25M>;
+ 	cts-gpios = <&gpio5 29 GPIO_ACTIVE_LOW>;
+ 	rts-gpios = <&gpio5 28 GPIO_ACTIVE_LOW>;
++        rs485-rts-active-low = <0>;
++        rs485-rx-during-tx = <1>;
+         status = "okay";
+ };
+ 
+-- 
+2.25.1
+

@@ -1,0 +1,25 @@
+From e1fc476c6ec8795fec3f944a0c28f7a5e536d1db Mon Sep 17 00:00:00 2001
+From: Benjamin Herrera Navarro <bherreranavarro@winsystems.com>
+Date: Tue, 6 Dec 2022 15:06:45 +0000
+Subject: [PATCH 3/6] Set connector and BUS format
+
+---
+ drivers/gpu/drm/panel/panel-simple.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/drivers/gpu/drm/panel/panel-simple.c b/drivers/gpu/drm/panel/panel-simple.c
+index 4f78bbf63f33..5d0cc9d63d7e 100644
+--- a/drivers/gpu/drm/panel/panel-simple.c
++++ b/drivers/gpu/drm/panel/panel-simple.c
+@@ -2608,6 +2608,8 @@ static const struct panel_desc innolux_g121x1_l03 = {
+ 		.unprepare = 200,
+ 		.disable = 400,
+ 	},
++	.bus_format = MEDIA_BUS_FMT_RGB888_1X7X4_JEIDA,
++	.connector_type = DRM_MODE_CONNECTOR_LVDS,
+ };
+ 
+ static const struct drm_display_mode innolux_n116bca_ea1_mode = {
+-- 
+2.25.1
+

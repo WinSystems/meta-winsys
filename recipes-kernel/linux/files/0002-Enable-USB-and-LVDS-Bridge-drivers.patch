@@ -1,0 +1,25 @@
+From 033fc6f26c56d1a37fc1a0c73d40a88bc192b517 Mon Sep 17 00:00:00 2001
+From: Benjamin Herrera Navarro <bherreranavarro@winsystems.com>
+Date: Tue, 6 Dec 2022 14:01:52 +0000
+Subject: [PATCH 2/6] Enable USB and LVDS Bridge drivers
+
+---
+ arch/arm64/configs/imx_v8_defconfig | 4 ----
+ 1 file changed, 4 deletions(-)
+
+diff --git a/arch/arm64/configs/imx_v8_defconfig b/arch/arm64/configs/imx_v8_defconfig
+index 039e54fd73fb..09f71e90730f 100644
+--- a/arch/arm64/configs/imx_v8_defconfig
++++ b/arch/arm64/configs/imx_v8_defconfig
+@@ -1051,7 +1051,3 @@ CONFIG_TRUSTED_KEYS_CAAM=y
+ 
+ CONFIG_USB_HUB_USB251XB=y
+ CONFIG_DRM_TI_SN65DSI83=y
+-CONFIG_DEBUG_INFO=y
+-CONFIG_GDB_SCRIPTS=y
+-CONFIG_DEBUG_INFO_DWARF4=y
+-CONFIG_FUNCTION_TRACER=y
+\ No newline at end of file
+-- 
+2.25.1
+

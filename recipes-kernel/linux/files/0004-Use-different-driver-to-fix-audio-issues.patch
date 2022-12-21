@@ -1,0 +1,93 @@
+From ad217adfc8163c707bafffec699f5982a303e99c Mon Sep 17 00:00:00 2001
+From: Benjamin Herrera Navarro <bherreranavarro@winsystems.com>
+Date: Wed, 7 Dec 2022 15:48:34 +0000
+Subject: [PATCH 4/6] Use different driver to fix audio issues
+
+---
+ .../boot/dts/freescale/imx8mq-itx-p-c444.dts  | 60 +++++++++----------
+ 1 file changed, 29 insertions(+), 31 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/freescale/imx8mq-itx-p-c444.dts b/arch/arm64/boot/dts/freescale/imx8mq-itx-p-c444.dts
+index 1bfc992e0497..41461d9671a8 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mq-itx-p-c444.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mq-itx-p-c444.dts
+@@ -84,36 +84,33 @@ reg_usdhc2_vmmc: usdhc2_vmmc {
+         };
+ 
+         sound-wm8960 {
+-                compatible = "simple-audio-card";
+-                simple-audio-card,name = "wm8960-audio";
+-                simple-audio-card,format = "i2s";
+-                simple-audio-card,frame-master = <&cpudai>;
+-                simple-audio-card,bitclock-master = <&cpudai>;
+-                simple-audio-card,widgets =
+-                        "Line", "Line Out Jack",
+-			"Line", "Line in Jack",
+-			"Microphone", "Microphone Jack";
+-
+-                simple-audio-card,routing =
++                compatible = "fsl,imx-audio-wm8960";
++                audio-cpu = <&sai2>;
++                audio-codec = <&audio_codec>;
++
++                audio-routing =
+                         "Line Out Jack", "HP_L",
+                         "Line Out Jack", "HP_R",
+-			"Line in Jack", "LINPUT3",
+-			"Line in Jack", "RINPUT3",
+-			"Microphone Jack", "LINPUT2",
+-			"Microphone Jack", "RINPUT2";
+-
+-                cpudai: simple-audio-card,cpu {
+-                        sound-dai = <&sai2>;
+-                        dai-tdm-slot-num = <2>;
+-                        dai-tdm-slot-width = <32>;
+-                };
+-
+-                link_codec: simple-audio-card,codec {
+-                        sound-dai = <&audio_codec>;
+-                        clocks = <&clk IMX8MQ_CLK_SAI2_ROOT>;
+-                };
+-        };
+-
++			"LINPUT3", "Line In Jack",
++			"RINPUT3", "Line In Jack",
++			"LINPUT2", "Mic Jack",
++			"RINPUT2", "Mic Jack";
++
++                model = "wm8960-audio";
++        };
++	sound-hdmi {
++		compatible = "fsl,imx-audio-hdmi";
++		model = "imx-audio-hdmi";
++		audio-cpu = <&sai4>;
++		hdmi-out;
++		constraint-rate = <44100>,
++				<88200>,
++				<176400>,
++				<32000>,
++				<48000>,
++				<96000>,
++				<192000>;
++	};
+ };
+ 
+ 
+@@ -594,10 +591,11 @@ vgen6_reg: vgen6 {
+         };
+ 
+         audio_codec: wm8960@1a {
++		compatible = "wlf,wm8960";
++		reg = <0x1a>;
++		clocks = <&clk IMX8MQ_CLK_SAI2_ROOT>;
++		clock-names = "mclk";
+ 		#sound-dai-cells = <0>;
+-                compatible = "wlf,wm8960";
+-                reg = <0x1a>;
+-                wlf,shared-lrclk;
+         };
+ 
+         usb_hub: usb2514bi@2c {
+-- 
+2.25.1
+

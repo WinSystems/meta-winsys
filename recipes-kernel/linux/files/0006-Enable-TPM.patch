@@ -1,0 +1,29 @@
+From db1a987dece6bb4d059c6fb0532f9c1c079df0f7 Mon Sep 17 00:00:00 2001
+From: Benjamin Herrera Navarro <bherreranavarro@winsystems.com>
+Date: Tue, 20 Dec 2022 16:59:44 +0000
+Subject: [PATCH 6/6] Enable TPM
+
+---
+ arch/arm64/configs/imx_v8_defconfig | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm64/configs/imx_v8_defconfig b/arch/arm64/configs/imx_v8_defconfig
+index 09f71e90730f..5f515ccf5371 100644
+--- a/arch/arm64/configs/imx_v8_defconfig
++++ b/arch/arm64/configs/imx_v8_defconfig
+@@ -1045,9 +1045,9 @@ CONFIG_TLS_DEVICE=y
+ 
+ # enable Trusted Keys based on CAAM
+ CONFIG_TRUSTED_KEYS=m
+-CONFIG_TRUSTED_KEYS_TPM=n
++CONFIG_TRUSTED_KEYS_TPM=y
+ CONFIG_TRUSTED_KEYS_TEE=n
+ CONFIG_TRUSTED_KEYS_CAAM=y
+ 
+ CONFIG_USB_HUB_USB251XB=y
+-CONFIG_DRM_TI_SN65DSI83=y
++CONFIG_DRM_TI_SN65DSI83=y
+\ No newline at end of file
+-- 
+2.25.1
+
