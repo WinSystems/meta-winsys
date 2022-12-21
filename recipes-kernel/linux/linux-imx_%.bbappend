@@ -1,4 +1,4 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 SRC_URI += " file://0001-Add-C444-device-tree.patch \
     file://0002-Enable-USB-and-LVDS-Bridge-drivers.patch \ 
     file://0003-Set-connector-and-BUS-format.patch \
