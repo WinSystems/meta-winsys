@@ -1,0 +1,25 @@
+From 90ae241e02cb4454ca37293bc9462a7769e2a7fd Mon Sep 17 00:00:00 2001
+From: Benjamin Herrera Navarro <bherreranavarro@winsystems.com>
+Date: Fri, 3 Feb 2023 19:30:15 +0000
+Subject: [PATCH] Set bpc to 8
+
+---
+ drivers/gpu/drm/panel/panel-simple.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/gpu/drm/panel/panel-simple.c b/drivers/gpu/drm/panel/panel-simple.c
+index 5d0cc9d63d7e..a9ac2928c22c 100644
+--- a/drivers/gpu/drm/panel/panel-simple.c
++++ b/drivers/gpu/drm/panel/panel-simple.c
+@@ -2598,7 +2598,7 @@ static const struct drm_display_mode innolux_g121x1_l03_mode = {
+ static const struct panel_desc innolux_g121x1_l03 = {
+ 	.modes = &innolux_g121x1_l03_mode,
+ 	.num_modes = 1,
+-	.bpc = 6,
++	.bpc = 8,
+ 	.size = {
+ 		.width = 246,
+ 		.height = 185,
+-- 
+2.25.1
+
