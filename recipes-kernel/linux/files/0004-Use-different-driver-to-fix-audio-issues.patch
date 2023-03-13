@@ -1,7 +1,7 @@
 From ad217adfc8163c707bafffec699f5982a303e99c Mon Sep 17 00:00:00 2001
 From: Benjamin Herrera Navarro <bherreranavarro@winsystems.com>
 Date: Wed, 7 Dec 2022 15:48:34 +0000
-Subject: [PATCH 4/6] Use different driver to fix audio issues
+Subject: [PATCH 4/8] Use different driver to fix audio issues
 
 ---
  .../boot/dts/freescale/imx8mq-itx-p-c444.dts  | 60 +++++++++----------

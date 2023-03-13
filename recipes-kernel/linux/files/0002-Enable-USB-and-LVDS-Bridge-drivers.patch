@@ -1,7 +1,7 @@
 From 033fc6f26c56d1a37fc1a0c73d40a88bc192b517 Mon Sep 17 00:00:00 2001
 From: Benjamin Herrera Navarro <bherreranavarro@winsystems.com>
 Date: Tue, 6 Dec 2022 14:01:52 +0000
-Subject: [PATCH 2/6] Enable USB and LVDS Bridge drivers
+Subject: [PATCH 2/8] Enable USB and LVDS Bridge drivers
 
 ---
  arch/arm64/configs/imx_v8_defconfig | 4 ----

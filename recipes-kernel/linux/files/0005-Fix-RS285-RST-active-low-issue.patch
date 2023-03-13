@@ -1,7 +1,7 @@
 From bd8be95597667c2545bf91d6c43cfad41c289944 Mon Sep 17 00:00:00 2001
 From: Benjamin Herrera Navarro <bherreranavarro@winsystems.com>
 Date: Tue, 20 Dec 2022 16:59:05 +0000
-Subject: [PATCH 5/6] Fix RS285 RST active low issue
+Subject: [PATCH 5/8] Fix RS285 RST active low issue
 
 ---
  .../boot/dts/freescale/imx8mq-itx-p-c444.dts  | 28 +++++++++++++++----
