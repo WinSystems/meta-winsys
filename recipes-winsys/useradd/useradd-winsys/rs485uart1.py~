@@ -16,7 +16,7 @@ gpio71 = chip.get_line(7)
 
 # Create Output config
 config_output = gpiod.line_request()
-config_output.consumer = "RS422UART1"
+config_output.consumer = "RS485UART1"
 config_output.request_type = gpiod.line_request.DIRECTION_OUTPUT
 
 
@@ -25,11 +25,11 @@ gpio72.request(config_output, 0)
 gpio71.request(config_output, 0)
 
 #Set GPIO values
-gpio73.set_value(1) #RS485 EN
-gpio72.set_value(0) #Full Duplex
-gpio71.set_value(0) #RE
+gpio73.set_value(1)
+gpio72.set_value(1)
+gpio71.set_value(0)
 
-subprocess.call(['./rs485-config', '1'])
+subprocess.call(['./rs485-config 1'])
 
 # Old legacy bash script
 # echo 73 > /sys/class/gpio/export
@@ -39,5 +39,7 @@ subprocess.call(['./rs485-config', '1'])
 # echo out > /sys/class/gpio/gpio72/direction
 # echo out > /sys/class/gpio/gpio71/direction
 # echo 1 > /sys/class/gpio/gpio73/value
-# echo 0 > /sys/class/gpio/gpio72/value
+# echo 1 > /sys/class/gpio/gpio72/value
 # echo 0 > /sys/class/gpio/gpio71/value
+
+#./rs485-config 1

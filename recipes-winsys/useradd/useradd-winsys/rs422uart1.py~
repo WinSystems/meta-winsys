@@ -29,7 +29,7 @@ gpio73.set_value(1) #RS485 EN
 gpio72.set_value(0) #Full Duplex
 gpio71.set_value(0) #RE
 
-subprocess.call(['./rs485-config', '1'])
+subprocess.call(['./rs485-config 1'])
 
 # Old legacy bash script
 # echo 73 > /sys/class/gpio/export

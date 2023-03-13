@@ -13,20 +13,19 @@ gpio82 = chip.get_line(18)
 
 # Create Output config
 config_output = gpiod.line_request()
-config_output.consumer = "RS485UART2"
+config_output.consumer = "RS422UART2"
 config_output.request_type = gpiod.line_request.DIRECTION_OUTPUT
 
-
-gpio80 = chip.request(config_output, 0)
-gpio81 = chip.request(config_output, 0)
-gpio82 = chip.request(config_output, 0)
+gpio80.request(config_output, 0)
+gpio81.request(config_output, 0)
+gpio82.request(config_output, 0)
 
 #Set GPIO values
 gpio80.set_value(1)
-gpio81.set_value(1)
+gpio81.set_value(0)
 gpio82.set_value(0)
 
-subprocess.call(['./rs485-config', '2'])
+subprocess.call(['./rs485-config 2'])
 
 # Old legacy bash script64
 # echo 80 > /sys/class/gpio/export
@@ -36,7 +35,5 @@ subprocess.call(['./rs485-config', '2'])
 # echo out > /sys/class/gpio/gpio81/direction
 # echo out > /sys/class/gpio/gpio82/direction
 # echo 1 > /sys/class/gpio/gpio80/value
-# echo 1 > /sys/class/gpio/gpio81/value
+# echo 0 > /sys/class/gpio/gpio81/value
 # echo 0 > /sys/class/gpio/gpio82/value
-
-# ./rs485-config 2
