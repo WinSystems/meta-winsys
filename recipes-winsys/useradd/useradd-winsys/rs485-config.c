@@ -40,9 +40,10 @@ int main(int argc, char *argv[])
     struct serial_rs485 rs485conf;
     int uart_num, fd_uart;
 
-    // check for two arguments
-    if (argc != 2) {
+    // check for two arguments or 3 arguments
+    if (argc != 2 && argc != 3) {
         printf("A single uart from 1-2 must be specified\n");
+        printf("Specify nostdout as second option to block printf output\n");
         printf("Usage: rs485-config <uart num>\n");
         exit(1);
     }
@@ -56,7 +57,10 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
-    printf("Enable rs485 mode for uart%d (ttymxc%d) ... ", uart_num, uart_num - 1);
+    if(argc != 3)
+    {
+        printf("Enable rs485 mode for uart%d (ttymxc%d) ... ", uart_num, uart_num - 1);
+    }
 
     // initialize rs485 struct
     memset(&rs485conf, 0, sizeof(rs485conf));
@@ -67,7 +71,10 @@ int main(int argc, char *argv[])
         fd_uart = open("/dev/ttymxc1", O_RDWR); // open uart2
 
     if (fd_uart < 0) {
-        printf("uart cannot be opened (fd = %d)\n", fd_uart);
+        if(argc != 3)
+        {
+            printf("uart cannot be opened (fd = %d)\n", fd_uart);
+        }
         exit(1);
     }   
 
@@ -77,13 +84,19 @@ int main(int argc, char *argv[])
     //rs485conf.flags |= SER_RS485_RTS_AFTER_SEND;
     //rs485conf.flags |= SER_RS485_RX_DURING_TX;
     if (ioctl(fd_uart, TIOCSRS485, &rs485conf) < 0) {
-        printf("rs485 cannot be enabled\n");
+        if(argc != 3)
+        {
+            printf("rs485 cannot be enabled\n");
+        }
         exit(1);
     }
 
     // close uart
     if (close(fd_uart) < 0) {
-        printf("uart cannot be closed\n");
+        if(argc != 3)
+        {
+            printf("uart cannot be closed\n");
+        }
         exit(1);
     }
 

@@ -25,7 +25,7 @@ gpio80.set_value(1)
 gpio81.set_value(0)
 gpio82.set_value(0)
 
-subprocess.call(['./rs485-config', '2'])
+subprocess.call(['./rs485-config', '2', 'nostdout'])
 
 # Old legacy bash script64
 # echo 80 > /sys/class/gpio/export
