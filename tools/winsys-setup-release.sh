@@ -166,6 +166,20 @@ echo "# Switch to Debian packaging and include package-management in the image" 
 echo "PACKAGE_CLASSES = \"package_deb\"" >> conf/local.conf
 echo "EXTRA_IMAGE_FEATURES += \"package-management\"" >> conf/local.conf
 echo "CORE_IMAGE_EXTRA_INSTALL += \"chromium-ozone-wayland\"" >> conf/local.conf
+echo "INHERIT += \"mirrors\"" >> conf/local.conf
+echo "MIRRORS += \" \\" >> conf/local.conf
+echo "    git://source.codeaurora.org/external/imx/ git://github.com/nxp-imx/ \n \\" >> conf/local.conf
+echo "    https://source.codeaurora.org/external/imx/ https://github.com/nxp-imx/ \n \\" >> conf/local.conf
+echo "    http://source.codeaurora.org/external/imx/ http://github.com/nxp-imx/ \n \\" >> conf/local.conf
+echo "    https://source.codeaurora.org/external/imxsupport/ https://github.com/nxp-imx-support/ \n \\" >> conf/local.conf
+echo "    git://source.codeaurora.org/external/imxsupport/ git://github.com/nxp-imx-support/ \n \\" >> conf/local.conf
+echo "    gitsm://source.codeaurora.org/external/imx/ gitsm://github.com/nxp-imx/ \n \\" >> conf/local.conf
+echo "\"" >> conf/local.conf
+echo "NXP_DEMO_SRC ?= \"git://github.com/nxp-imx-support/nxp-demo-experience;protocol=https\"" >> conf/local.conf
+echo "NXP_DEMO_LIST_SRC ?= \"git://github.com/nxp-imx-support/nxp-demo-experience-demos-list;protocol=https\"" >> conf/local.conf
+
+
+
 
 if [ ! -e $BUILD_DIR/conf/bblayers.conf.org ]; then
     cp $BUILD_DIR/conf/bblayers.conf $BUILD_DIR/conf/bblayers.conf.org
