@@ -3,7 +3,7 @@ DESCRIPTION = "Recipe for adding the default user winsys to the image"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"
 
-SRC_URI = "file://rs485-config.c \
+SRC_URI = "file://rs485-rs422-config.c \
            file://rs485-config \
            file://rs422uart1 \
            file://rs422uart2 \
@@ -34,7 +34,7 @@ do_install () {
         install -d -m 755 ${D}${datadir}/winsys
 	install -d -m 755 ${D}/home/winsys/serial-scripts/
 
-	install -p -m 644 rs485-config.c ${D}/home/winsys/serial-scripts/
+	install -p -m 644 rs485-rs422-config.c ${D}/home/winsys/serial-scripts/
 	install -p -m 755 rs485-config ${D}/home/winsys/serial-scripts/
 	install -p -m 755 rs422uart1 ${D}/home/winsys/serial-scripts/
 	install -p -m 755 rs422uart2 ${D}/home/winsys/serial-scripts/
