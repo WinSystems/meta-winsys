@@ -1,7 +1,7 @@
 From 5c234fc5d4af2bdcb734d8eacd4040efd3fecc7e Mon Sep 17 00:00:00 2001
 From: Benjamin Herrera Navarro <bherreranavarro@winsystems.com>
 Date: Mon, 13 Mar 2023 19:46:03 +0000
-Subject: [PATCH 8/8] Change RTS and CTS GPIOs to active high
+Subject: [PATCH 8/9] Change RTS and CTS GPIOs to active high
 
 ---
  .../arm64/boot/dts/freescale/imx8mq-itx-p-c444.dts | 14 ++++++--------

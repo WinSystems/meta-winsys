@@ -6,4 +6,5 @@ SRC_URI += "file://0001-Add-C444-device-tree.patch \
     file://0005-Fix-RS285-RST-active-low-issue.patch \
     file://0006-Enable-TPM.patch \
     file://0007-Set-bpc-to-8.patch \
-    file://0008-Change-RTS-and-CTS-GPIOs-to-active-high.patch"
+    file://0008-Change-RTS-and-CTS-GPIOs-to-active-high.patch \
+    file://0009-Enable-RTC-driver.patch"

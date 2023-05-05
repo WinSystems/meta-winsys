@@ -1,7 +1,7 @@
 From cb2eacf0ec2124d2a2e2625af9cec20315380cf3 Mon Sep 17 00:00:00 2001
 From: Benjamin Herrera Navarro <bherreranavarro@winsystems.com>
 Date: Tue, 6 Dec 2022 13:51:47 +0000
-Subject: [PATCH 1/8] Add C444 device tree
+Subject: [PATCH 1/9] Add C444 device tree
 
 ---
  arch/arm64/boot/dts/freescale/Makefile        |    4 +

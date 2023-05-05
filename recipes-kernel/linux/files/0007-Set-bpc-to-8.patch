@@ -1,7 +1,7 @@
 From 90ae241e02cb4454ca37293bc9462a7769e2a7fd Mon Sep 17 00:00:00 2001
 From: Benjamin Herrera Navarro <bherreranavarro@winsystems.com>
 Date: Fri, 3 Feb 2023 19:30:15 +0000
-Subject: [PATCH 7/8] Set bpc to 8
+Subject: [PATCH 7/9] Set bpc to 8
 
 ---
  drivers/gpu/drm/panel/panel-simple.c | 2 +-

@@ -64,6 +64,7 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 	qtcharts \
 	qtdatavis3d \
 	packagegroup-qt6-imx \
+	udev-extraconf \
 "
 
 IMAGE_INSTALL:remove += "docker packagegroup-imx-ml "
