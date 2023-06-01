@@ -18,6 +18,9 @@ do_install:append() {
     install -d ${D}${sysconfdir}/udev/rules.d
 	install -D -p -m0666 ${WORKDIR}/71-weston-drm.rules ${D}${sysconfdir}/udev/rules.d/71-weston-drm.rules
 	install -D -p -m0644 ${WORKDIR}/WinSystems.png ${D}${datadir}/backgrounds/WinSystems.png
+
+    update_file "User=root" "User=winsys" ${D}${systemd_system_unitdir}/weston.service
+    update_file "Group=root" "Group=video" ${D}${systemd_system_unitdir}/weston.service
     
 }
 
