@@ -8,7 +8,7 @@ SRC_URI = "git://github.com/qca/sigma-dut/;protocol=https;branch=github-qca/mast
            file://0001-Add-handling-of-DYN_BW_SGNL-command-for-DRIVER_LINUX.patch \
 "
 
-SRCREV = "fd7359aed6aaba745e31dd0a9fed80578372d554"
+SRCREV = "7c8962080f88971cf52eb4df01f0f5fe92fdec19"
 
 S = "${WORKDIR}/git"
 
