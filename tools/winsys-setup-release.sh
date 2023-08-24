@@ -176,6 +176,7 @@ echo "    git://source.codeaurora.org/external/imxsupport/ git://github.com/nxp-
 echo "    gitsm://source.codeaurora.org/external/imx/ gitsm://github.com/nxp-imx/ \n \\" >> conf/local.conf
 echo "    https://source.codeaurora.org/mirrored_source/external/imx/DevIL-1.8.0.zip http://sourceforge.net/projects/openil/files/DevIL/1.8.0/DevIL-1.8.0.zip \n \\" >> conf/local.conf
 echo "    git://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/utils/sigma-dut/ https://github.com/qca/sigma-dut/ \n \\" >> conf/local.conf
+echo "    https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/utils/sigma-dut/ https://github.com/qca/sigma-dut/ \n \\" >> conf/local.conf
 echo "\"" >> conf/local.conf
 echo "NXP_DEMO_SRC ?= \"git://github.com/nxp-imx-support/nxp-demo-experience;protocol=https\"" >> conf/local.conf
 echo "NXP_DEMO_LIST_SRC ?= \"git://github.com/nxp-imx-support/nxp-demo-experience-demos-list;protocol=https\"" >> conf/local.conf
