@@ -3,7 +3,7 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 SUMMARY = "Changes default RTC"
 DESCRIPTION = "Recipe to change rtc1 to be the default rtc in the extraconf.rule file"
 
-SRC_URI = " file://localextra.rules "
+SRC_URI += "file://localextra.rules "
 
 S = "${WORKDIR}"
 
