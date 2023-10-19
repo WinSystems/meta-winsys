@@ -65,11 +65,13 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 	qtdatavis3d \
 	packagegroup-qt6-imx \
 	udev-extraconf \
+ 	linux-firmware-iwlwifi \
 "
 
 IMAGE_INSTALL:remove += "docker packagegroup-imx-ml "
 RDEPENDS:remove += "nxp-demo-experience"
 
-IMAGE_INSTALL:append = " useradd-winsys python3-gpiod "
+KERNEL_MODULE_AUTOLOAD:append = "emuc2socketcan iwlwifi"
+IMAGE_INSTALL:append = " emuc2socketcan useradd-winsys python3-gpiod "
 
 IMAGE_FEATURES += " ssh-server-openssh "
