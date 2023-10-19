@@ -18,11 +18,11 @@ DEPENDS += "lzop-native bc-native"
 
 SRCBRANCH = "lf-5.15.y"
 LOCALVERSION = "-lts-next"
-KERNEL_SRC ?= "git://source.codeaurora.org/external/imx/linux-imx.git;protocol=https;branch=${SRCBRANCH}"
+KERNEL_SRC ?= "git://github.com/WinSystems/linux-imx.git;protocol=https;branch=${SRCBRANCH}"
 KBRANCH = "${SRCBRANCH}"
 SRC_URI = "${KERNEL_SRC}"
 
-SRCREV = "fa6c3168595c02bd9d5366fcc28c9e7304947a3d"
+SRCREV = "408aee3e76143ca03e9ac0563ba89dbda039c176"
 
 # PV is defined in the base in linux-imx.inc file and uses the LINUX_VERSION definition
 # required by kernel-yocto.bbclass.
