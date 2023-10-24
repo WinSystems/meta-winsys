@@ -71,7 +71,7 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 IMAGE_INSTALL:remove += "docker packagegroup-imx-ml "
 RDEPENDS:remove += "nxp-demo-experience"
 
-KERNEL_MODULE_AUTOLOAD:append = "emuc2socketcan iwlwifi"
+KERNEL_MODULE_AUTOLOAD += "emuc2socketcan iwlwifi"
 IMAGE_INSTALL:append = " emuc2socketcan useradd-winsys python3-gpiod "
 
 IMAGE_FEATURES += " ssh-server-openssh "
