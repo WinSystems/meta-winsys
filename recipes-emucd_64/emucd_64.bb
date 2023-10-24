@@ -26,4 +26,4 @@ do_install() {
 }
 
 FILES:${PN} += "${bindir}/emucd_64"
-PROVIDES:${PN} = "emucd_64"
+RPROVIDES:${PN} = "emucd_64"
