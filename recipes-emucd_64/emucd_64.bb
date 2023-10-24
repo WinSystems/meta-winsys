@@ -25,4 +25,5 @@ do_install() {
     install -m 0755 emucd_64 ${D}${bindir}
 }
 
-FILES_${PN} += "${bindir}/emucd_64"
+FILES:${PN} += "${bindir}/emucd_64"
+PROVIDES:${PN} = "emucd_64"
