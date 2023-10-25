@@ -12,8 +12,10 @@ SRC_URI = " file://include/version.h \
 "
 S = "${WORKDIR}"
 
+TARGET_CC_ARCH += "${LDFLAGS}"
+
 do_compile() {
-    oe_runmake
+    oe_runmake CC="${CC}"
 }
 
 do_install() {
