@@ -10,11 +10,7 @@ SRC_URI = " file://include/version.h \
     file://main.c \
     file://Makefile \
 "
-
-
 S = "${WORKDIR}"
-
-inherit make
 
 do_compile() {
     oe_runmake
@@ -26,5 +22,5 @@ do_install() {
 }
 
 FILES:${PN} += "${bindir}/emucd_64"
-RPROVIDES:${PN} = "emucd"
-PROVIDES:${PN} = "emucd"
+RPROVIDES:${PN} += "emucd"
+PROVIDES:${PN} += "emucd"

@@ -6,9 +6,9 @@ OBJS_64         := $(SRCS:.c=.o64)
 TARGET_32       := emucd_32
 TARGET_64       := emucd_64
 CFLAGS_32       := -m32 -I./include
-CFLAGS_64       := -m64 -I./include
+CFLAGS_64       := -I./include
 LDFLAGS_32      := lib_emuc2_32.a -m32 -lm -lpthread
-LDFLAGS_64      := lib_emuc2_64.a -m64 -lm -lpthread
+LDFLAGS_64      := lib_emuc2_64.a -lm -lpthread
 LBITS           := $(shell getconf LONG_BIT)
 
 .PHONY: all both clean
