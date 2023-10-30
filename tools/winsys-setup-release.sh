@@ -2,7 +2,7 @@
 #
 # WINSYSTEMS, Inc. i.MX8 Yocto Project Build Script
 # 	Modified for ITX-P-C444
-#	tjsmith	2020-08-18
+#	Benjamin Herrera 10/30/2023
 #
 #
 #
