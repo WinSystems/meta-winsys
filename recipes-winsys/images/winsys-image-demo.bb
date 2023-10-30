@@ -51,7 +51,6 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 	bmap-tools \
 	alsa-equal \
 	alsa-lib \
-	alsa-oss \
 	alsa-plugins \
 	alsa-state \
 	alsa-tools \
