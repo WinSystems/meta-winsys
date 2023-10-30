@@ -122,20 +122,8 @@ imx8*)
     ;;
 esac
 
-# Cleanup previous meta-freescale/EULA overrides
-cd $CWD/sources/meta-freescale
-if [ -h EULA ]; then
-    echo Cleanup meta-freescale/EULA...
-    git checkout -- EULA
-fi
-if [ ! -f classes/fsl-eula-unpack.bbclass ]; then
-    echo Cleanup meta-freescale/classes/fsl-eula-unpack.bbclass...
-    git checkout -- classes/fsl-eula-unpack.bbclass
-fi
-cd -
-
 # Override the click-through in meta-freescale/EULA
-FSL_EULA_FILE=$CWD/sources/meta-imx/EULA.txt
+FSL_EULA_FILE=$CWD/sources/meta-imx/LICENSE.txt
 
 # Set up the basic yocto environment
 if [ -z "$DISTRO" ]; then
@@ -199,8 +187,12 @@ echo "# i.MX Yocto Project Release layers" >> $BUILD_DIR/conf/bblayers.conf
 hook_in_layer meta-imx/meta-bsp
 hook_in_layer meta-imx/meta-sdk
 hook_in_layer meta-imx/meta-ml
+hook_in_layer meta-imx/meta-v2x
+hook_in_layer meta-nxp-demo-experience
 
 echo "" >> $BUILD_DIR/conf/bblayers.conf
+echo "BBLAYERS += \"\${BSPDIR}/sources/meta-arm/meta-arm\"" >> $BUILD_DIR/conf/bblayers.conf
+echo "BBLAYERS += \"\${BSPDIR}/sources/meta-arm/meta-arm-toolchain\"" >> $BUILD_DIR/conf/bblayers.conf
 echo "BBLAYERS += \"\${BSPDIR}/sources/meta-browser/meta-chromium\"" >> $BUILD_DIR/conf/bblayers.conf
 echo "BBLAYERS += \"\${BSPDIR}/sources/meta-clang\"" >> $BUILD_DIR/conf/bblayers.conf
 echo "BBLAYERS += \"\${BSPDIR}/sources/meta-openembedded/meta-gnome\"" >> $BUILD_DIR/conf/bblayers.conf
@@ -210,7 +202,8 @@ echo "BBLAYERS += \"\${BSPDIR}/sources/meta-openembedded/meta-filesystems\"" >> 
 
 echo "BBLAYERS += \"\${BSPDIR}/sources/meta-nxp-demo-experience\"" >> $BUILD_DIR/conf/bblayers.conf
 echo "BBLAYERS += \"\${BSPDIR}/sources/meta-qt6\"" >> $BUILD_DIR/conf/bblayers.conf
-echo "BBLAYERS += \"\${BSPDIR}/sources/meta-python2\"" >> $BUILD_DIR/conf/bblayers.conf
+echo "BBLAYERS += \"\${BSPDIR}/sources/meta-security/meta-parsec\"" >> $BUILD_DIR/conf/bblayers.conf
+echo "BBLAYERS += \"\${BSPDIR}/sources/meta-virtualization\"" >> $BUILD_DIR/conf/bblayers.conf
 echo "BBLAYERS += \"\${BSPDIR}/sources/meta-security/meta-tpm\"" >> $BUILD_DIR/conf/bblayers.conf
 echo "BBLAYERS += \"\${BSPDIR}/sources/meta-winsys\"" >> $BUILD_DIR/conf/bblayers.conf
 
