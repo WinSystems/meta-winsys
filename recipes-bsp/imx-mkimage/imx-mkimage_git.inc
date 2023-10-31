@@ -2,14 +2,14 @@
  
 DEPENDS = "zlib-native openssl-native"
 
-SRCBRANCH = "lf-5.15.32_2.0.0"
-IMX_MKIMAGE_SRC ?= "git://source.codeaurora.org/external/imx/imx-mkimage.git;protocol=https"
-IMX_MKIMAGE_SRC ?= "git://github.com/WinSystems/imx-mkimage.git;protocol=https"
 SRC_URI = "${IMX_MKIMAGE_SRC};branch=${SRCBRANCH} \
            file://0001-iMX8M-soc.mak-use-native-mkimage-from-sysroot.patch \
+           file://0001-Add-correct-DTB-to-makefile-for-patch-generation.patch  \
 "
-SRCREV = "a8bb8edb45492ac70b33734122a57aa8e38a20bd"
-# SRCREV = "a6d2118356c18b1a4c4f2d29fad2c31af2fa5753""
+IMX_MKIMAGE_SRC ?= "git://github.com/nxp-imx/imx-mkimage.git;protocol=https"
+SRCBRANCH = "lf-6.1.22_2.0.0"
+SRCREV = "5cfd218012e080fb907d9cc301fbb4ece9bc17a9" 
+
 S = "${WORKDIR}/git"
 
 BOOT_TOOLS = "imx-boot-tools"
