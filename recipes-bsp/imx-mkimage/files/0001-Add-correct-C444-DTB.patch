@@ -1,6 +1,6 @@
-From 9295a4e5d4aa8344241c76e458fcce726b765aa6 Mon Sep 17 00:00:00 2001
+From 6cdb6a8cb561fd3dbb06885133a76bac4fe4905e Mon Sep 17 00:00:00 2001
 From: Benjamin Herrera Navarro <bherreranavarro@winsystems.com>
-Date: Wed, 1 Nov 2023 17:06:47 +0000
+Date: Wed, 1 Nov 2023 17:16:41 +0000
 Subject: [PATCH 1/1] Add correct C444 DTB
 
 Signed-off-by: Benjamin Herrera Navarro <bherreranavarro@winsystems.com>
@@ -9,17 +9,17 @@ Signed-off-by: Benjamin Herrera Navarro <bherreranavarro@winsystems.com>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/iMX8M/soc.mak b/iMX8M/soc.mak
-index a98195e..c93002e 100644
+index 3486079..c54a520 100644
 --- a/iMX8M/soc.mak
 +++ b/iMX8M/soc.mak
-@@ -142,7 +142,7 @@ clean:
+@@ -148,7 +148,7 @@ clean:
  
  dtb = evk.dtb
  $(dtb):
 -	./$(DTB_PREPROC) $(PLAT)-evk.dtb $(dtb) $(dtbs)
 +	./$(DTB_PREPROC) $(PLAT)-itx-p-c444.dtb $(dtb) $(dtbs)
  
- u-boot.itb: $(dtb)
+ u-boot.itb: $(dtb) $(supp_dtbs)
  	./$(PAD_IMAGE) $(TEE)
 -- 
 2.25.1
