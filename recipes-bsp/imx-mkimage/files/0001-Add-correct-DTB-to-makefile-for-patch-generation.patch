@@ -1,25 +1,13 @@
-From 4915b847dc81fc08ee8d638c09600b5513c37650 Mon Sep 17 00:00:00 2001
-From: TJ Smith <tjsmith@winsystems.com>
-Date: Thu, 20 Aug 2020 19:54:08 +0000
-Subject: [PATCH] Add correct DTB to makefile for patch generation
-
----
- iMX8M/soc.mak | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
 diff --git a/iMX8M/soc.mak b/iMX8M/soc.mak
-index b7b3986..3a8980e 100644
+index a98195e..c93002e 100644
 --- a/iMX8M/soc.mak
 +++ b/iMX8M/soc.mak
-@@ -135,7 +135,7 @@ clean:
+@@ -142,7 +142,7 @@ clean:
  
- dtbs = evk.dtb
- $(dtbs):
--	./$(DTB_PREPROC) $(PLAT)-evk.dtb $(dtbs)
-+	./$(DTB_PREPROC) $(PLAT)-itx-p-c444.dtb $(dtbs)
+ dtb = evk.dtb
+ $(dtb):
+-       ./$(DTB_PREPROC) $(PLAT)-evk.dtb $(dtb) $(dtbs)
++       ./$(DTB_PREPROC) $(PLAT)-itx-p-c444.dtb $(dtb) $(dtbs)
  
- u-boot.itb: $(dtbs)
- 	./$(PAD_IMAGE) tee.bin
--- 
-2.25.1
-
+ u-boot.itb: $(dtb)
+        ./$(PAD_IMAGE) $(TEE)
