@@ -9,6 +9,8 @@ SRC_URI = "file://include/emuc_parse.h \
            file://Makefile \
            file://transceive.c \
           "
+
+DEPENDS = "virtual/kernel"
 inherit module
 
 S = "${WORKDIR}"
