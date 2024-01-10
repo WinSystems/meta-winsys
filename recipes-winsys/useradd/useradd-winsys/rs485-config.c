@@ -41,8 +41,8 @@ int main(int argc, char *argv[])
     int uart_num, fd_uart;
 
     // check for two arguments or 3 arguments
-    if (argc != 2 && argc != 3) {
-        printf("A single uart from 1-2 must be specified\n");
+    if (argc != 2) {
+        printf("A single uart from 0-1 must be specified\n");
         printf("Specify nostdout as second option to block printf output\n");
         printf("Usage: rs485-config <uart num>\n");
         exit(1);
@@ -51,23 +51,23 @@ int main(int argc, char *argv[])
     uart_num = atoi(argv[1]);
 
     // check uart range
-    if (uart_num < 1 || uart_num > 2) {
-        printf("A valid uart from 1-2 must be specified\n");
+    if (uart_num < 0 || uart_num > 1) {
+        printf("A valid uart from 0-1 must be specified\n");
         printf("Usage: rs485-config <uart num>\n");
         exit(1);
     }
 
     if(argc != 3)
     {
-        printf("Enable rs485 mode for uart%d (ttymxc%d) ... ", uart_num, uart_num - 1);
+        printf("Enable rs485 mode for uart%d (ttymxc%d) ... ", uart_num, uart_num);
     }
 
     // initialize rs485 struct
     memset(&rs485conf, 0, sizeof(rs485conf));
 
-    if (uart_num == 1)
+    if (uart_num == 0)
         fd_uart = open("/dev/ttymxc0", O_RDWR); // open uart1
-    else if (uart_num == 2)
+    else if (uart_num == 1)
         fd_uart = open("/dev/ttymxc1", O_RDWR); // open uart2
 
     if (fd_uart < 0) {
