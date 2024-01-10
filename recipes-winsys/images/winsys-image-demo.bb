@@ -66,6 +66,8 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 	packagegroup-qt6-imx \
 	udev-extraconf \
  	linux-firmware-iwlwifi \
+	iproute2 \
+	iozone3 \
 "
 
 IMAGE_INSTALL:remove = "docker packagegroup-imx-ml "
