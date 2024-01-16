@@ -81,5 +81,3 @@ This Yocto layer is provided under [LICENSE](LICENSE.md). By using, distributing
 This layer has been developed and maintained by the WinSystems team, with contributions from the open-source community. We would like to thank all contributors for their valuable input and dedication to the project.
 
 ---
-
-**Note:** This README is a template and may need adjustments to fit your specific project's requirements and structure. Be sure to customize it to accurately reflect your project's setup, usage, and contribution processes.
