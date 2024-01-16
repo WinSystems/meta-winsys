@@ -26,13 +26,13 @@ Welcome to the official GitHub repository for the WinSystems C444 Yocto Layer. T
 ## Quick Start Guide
 
 1. **Install Dependencies:**
-   ```
+   ```bash
    sudo apt update && sudo apt upgrade
    sudo apt install gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat libsdl1.2-dev xterm sed cvs subversion coreutils texi2html docbook-utils python-pysqlite2 help2man make gcc g++ desktop-file-utils libgl1-mesa-dev libglu1-mesa-dev mercurial autoconf automake groff curl lzop asciidoc u-boot-tools python
    ```
 
 2. **Set Up Environment:**
-   ```
+   ```bash
    mkdir ~/winYocto
    git config --global user.name "Your Name"
    git config --global user.email "Your Email"
@@ -43,14 +43,14 @@ Welcome to the official GitHub repository for the WinSystems C444 Yocto Layer. T
    ```
 
 3. **Download Yocto Project Layers:**
-   ```
+   ```bash
    cd ~/winYocto
    repo init -u https://github.com/WinSystems/c444-manifest.git -b 5.15 -m itx-p-c444_5.15.32.xml
    repo sync
    ```
 
 4. **Build the Image:**
-   ```
+   ```bash
    MACHINE=imx8mq-itx-p-c444 DISTRO=c444-xwayland source winsys-setup-release.sh -b build
    ulimit -n 10000
    bitbake -k winsys-image-demo
@@ -81,3 +81,5 @@ This Yocto layer is provided under [LICENSE](LICENSE.md). By using, distributing
 This layer has been developed and maintained by the WinSystems team, with contributions from the open-source community. We would like to thank all contributors for their valuable input and dedication to the project.
 
 ---
+
+**Note:** This README is a template and may need adjustments to fit your specific project's requirements and structure. Be sure to customize it to accurately reflect your project's setup, usage, and contribution processes.
