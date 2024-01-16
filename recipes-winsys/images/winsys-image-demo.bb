@@ -68,6 +68,7 @@ CORE_IMAGE_EXTRA_INSTALL += " \
  	linux-firmware-iwlwifi \
 	iproute2 \
 	iozone3 \
+	picocom \
 "
 
 IMAGE_INSTALL:remove = "docker packagegroup-imx-ml "
