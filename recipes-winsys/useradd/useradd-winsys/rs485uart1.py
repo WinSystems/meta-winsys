@@ -26,7 +26,8 @@ gpio80.set_value(1)
 gpio81.set_value(1)
 gpio82.set_value(0)
 
-subprocess.call(['./rs485-config', '2'])
+#The rs485-config file now is 0 indexed.
+subprocess.call(['./rs485-config', '1'])
 
 # Old legacy bash script64
 # echo 80 > /sys/class/gpio/export
