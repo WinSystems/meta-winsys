@@ -73,6 +73,15 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 
 IMAGE_INSTALL:remove = "docker packagegroup-imx-ml "
 RDEPENDS:remove = "nxp-demo-experience"
-IMAGE_INSTALL:append = " emuc2socketcan useradd-winsys python3-gpiod emucd "
+IMAGE_INSTALL:append = "emuc2socketcan \
+	useradd-winsys \
+	python3-gpiod \
+	emucd \
+	python3-psutil \
+	python3-pyserial \
+	python3-spidev \
+	python3-python-can \
+	python3-systemd-python \
+	"
 
 IMAGE_FEATURES += " ssh-server-openssh "

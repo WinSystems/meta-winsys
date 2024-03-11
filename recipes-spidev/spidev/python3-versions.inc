@@ -1,0 +1,1 @@
+PREFERRED_VERSION_python3-spidev = "3.6"

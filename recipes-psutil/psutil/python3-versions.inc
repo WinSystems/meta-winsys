@@ -1,0 +1,1 @@
+PREFERRED_VERSION_python3-psutil = "5.9.8"
