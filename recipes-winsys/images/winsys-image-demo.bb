@@ -69,6 +69,8 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 	iproute2 \
 	iozone3 \
 	picocom \
+	git \
+	kernel-devsrc \
 "
 
 IMAGE_INSTALL:remove = "docker packagegroup-imx-ml "
