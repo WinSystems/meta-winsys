@@ -89,6 +89,6 @@ IMAGE_INSTALL:append = "emuc2socketcan \
 
 IMAGE_FEATURES += " ssh-server-openssh "
 
-inherit populate_sdk
+# inherit populate_sdk
 
-TOOLCHAIN_HOST_TASK += "nativesdk-elfutils"
+# TOOLCHAIN_HOST_TASK += "nativesdk-elfutils"
