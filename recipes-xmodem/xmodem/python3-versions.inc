@@ -1,0 +1,1 @@
+PREFERRED_VERSION_python3-xmodem = "0.4.7"

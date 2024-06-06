@@ -78,6 +78,7 @@ RDEPENDS:remove = "nxp-demo-experience"
 IMAGE_INSTALL:append = "emuc2socketcan \
 	useradd-winsys \
 	python3-gpiod \
+	python3-xmodem \
 	emucd \
 	python3-psutil \
 	python3-pyserial \
