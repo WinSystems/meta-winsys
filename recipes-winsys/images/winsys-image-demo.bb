@@ -72,7 +72,8 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 	git \
 	kernel-devsrc \
 	libgpiod-dev \
-	libgpiod-doc \
+	libgpiod \
+	libgpiod-tools \
 "
 
 IMAGE_INSTALL:remove = "docker packagegroup-imx-ml "
