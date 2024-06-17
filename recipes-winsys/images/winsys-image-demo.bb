@@ -71,6 +71,10 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 	picocom \
 	git \
 	kernel-devsrc \
+	libgpiod-dev \
+	libpgiod2 \
+	libgpiod-doc \
+	libgpiod-dbgsym \
 "
 
 IMAGE_INSTALL:remove = "docker packagegroup-imx-ml "
