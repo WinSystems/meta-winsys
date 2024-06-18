@@ -12,5 +12,8 @@ SRC_URI[sha256sum] = "2f1068aa8676f0d1d112498b5786c4f8ea4f89d8f25d07d3a0f293cd21
 S = "${WORKDIR}/xmodem-0.4.7"
 
 RDEPENDS_${PN} = ""
-
+FILES:${PN} = " /usr/doc/XMODEM.TXT \
+  /usr/doc/ymodem.txt \
+  /usr/doc/XMODMCRC.TXT \
+  /usr/doc/XMODEM1K.TXT"
 inherit setuptools3
