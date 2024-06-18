@@ -28,10 +28,10 @@ config_output.consumer = "RS485UART2"
 config_output.request_type = gpiod.line_request.DIRECTION_OUTPUT
 
 # Request Lines
-gpio9   = chip.request(config_output, 0)
-gpio8   = chip.request(config_output, 0)
-gpio7   = chip.request(config_output, 0)
-gpio22  = chip.request(config_output, 0)
+gpio9.request(config_output, 0)
+gpio8.request(config_output, 0)
+gpio7.request(config_output, 0)
+gpio22.request(config_output, 0)
 
 # Set GPIO values
 gpio9.set_value(1)  #RS485 ENABLE
