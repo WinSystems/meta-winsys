@@ -23,6 +23,7 @@ gpio16 = chip.get_line(16) #RS485 EN
 gpio17 = chip.get_line(17) #Full Duplex
 gpio18 = chip.get_line(18) #Read Enable ACTIVE LOW
 gpio4  = chip.get_line(4)  #SLEW ALLOWS HIGHER BAUD RATES ABOVE 0.5M
+gpio15  = chip.get_line(15)  #TERM
 
 # Create Output config
 config_output = gpiod.line_request()
@@ -34,12 +35,14 @@ gpio16.request(config_output, 0)
 gpio17.request(config_output, 0)
 gpio18.request(config_output, 0)
 gpio4.request(config_output, 0)
+gpio15.request(config_output, 0)
 
 #Set GPIO values
 gpio16.set_value(1) #RS485 ENABLE
 gpio17.set_value(1) #Full Duplex
 gpio18.set_value(0) #ACTIVE LOW READ ENABLE
 gpio4.set_value(1)  #ACTIVE HIGH SLEW ENABLE FOR HIGH BAUD RATE SPEEDS
+gpio15.set_value(1) #ACTIVE HIGH ENABLE TERMINATION RESISTORS
 
 # The rs485-config file now is 0 indexed to match kernel device indexing.
 subprocess.call(['./rs485-config', '0'])
