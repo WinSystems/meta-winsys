@@ -179,6 +179,7 @@ echo "    https://source.codeaurora.org/mirrored_source/external/imx/DevIL-1.8.0
 echo "    git://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/utils/sigma-dut/ git://github.com/qca/sigma-dut/ \n \\" >> conf/local.conf
 echo "    https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/utils/sigma-dut/ https://github.com/qca/sigma-dut/ \n \\" >> conf/local.conf
 echo "    http://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/utils/sigma-dut/ http://github.com/qca/sigma-dut/ \n \\" >> conf/local.conf
+echo "    git://git.alsa-project.org/tinycompress/ git://github.com/alsa-project/tinycompress/ \n \\" >> conf/local.conf
 echo "\"" >> conf/local.conf
 echo "NXP_DEMO_SRC ?= \"git://github.com/nxp-imx-support/nxp-demo-experience;protocol=https\"" >> conf/local.conf
 echo "NXP_DEMO_LIST_SRC ?= \"git://github.com/nxp-imx-support/nxp-demo-experience-demos-list;protocol=https\"" >> conf/local.conf
