@@ -4,6 +4,8 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"
 
 SRC_URI = "file://gpio_test.py \
+	file://rs232uart1.py \
+	file://rs232uart2.py \
         file://rs422uart1.py \
         file://rs422uart2.py \
         file://rs485-config \
@@ -40,6 +42,8 @@ do_install () {
 	install -p -m 755 rs422uart2.py ${D}/home/winsys/serial-scripts/
 	install -p -m 755 rs485uart1.py ${D}/home/winsys/serial-scripts/
 	install -p -m 755 rs485uart2.py ${D}/home/winsys/serial-scripts/
+	install -p -m 755 rs232uart1.py ${D}/home/winsys/serial-scripts/
+	install -p -m 755 rs232uart2.py ${D}/home/winsys/serial-scripts/
 	install -p -m 755 gpio_test.py ${D}/home/winsys/
 
         chown -R winsys:winsys ${D}${datadir}/winsys
