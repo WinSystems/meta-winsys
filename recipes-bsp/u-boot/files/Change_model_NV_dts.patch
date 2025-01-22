@@ -1,0 +1,13 @@
+Author: Destiny Rogers <drogers@winsystems.com>
+
+--- a/arch/arm/dts/imx8mq-itx-p-c444.dts
++++ b/arch/arm/dts/imx8mq-itx-p-c444.dts
+@@ -9,7 +9,7 @@
+ #include "imx8mq-itx-p-c444.dtsi"
+ 
+ / {
+-	model = "WINSYSTEMS i.MX8MQ ITX-P-C444";
++	model = "WINSYSTEMS i.MX8MQ ITX-P-C444-NV";
+ 	compatible = "fsl,imx8mq-evk", "fsl,imx8mq";
+ 
+ 	chosen {

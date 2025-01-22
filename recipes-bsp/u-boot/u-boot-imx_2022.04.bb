@@ -5,7 +5,7 @@
 require recipes-bsp/u-boot/u-boot.inc
 ###############################################################
 ########### For upstream u-boot-imx-common_2022.04.inc ########
-DESCRIPTION = "i.MX U-Boot suppporting i.MX reference boards."
+DESCRIPTION = "i.MX U-Boot supporting i.MX reference boards."
 
 LICENSE = "GPL-2.0-or-later"
 LIC_FILES_CHKSUM = "file://Licenses/gpl-2.0.txt;md5=b234ee4d69f5fce4486a80fdaf4a4263"
@@ -13,6 +13,11 @@ LIC_FILES_CHKSUM = "file://Licenses/gpl-2.0.txt;md5=b234ee4d69f5fce4486a80fdaf4a
 UBOOT_SRC ?= "git://github.com/WinSystems/uboot-imx.git;protocol=https"
 SRCBRANCH = "lf_v2022.04"
 SRC_URI = "${UBOOT_SRC};branch=${SRCBRANCH}"
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
+SRC_URI:append:imx8mq-itx-p-c444-nv = " \
+    file://Disable_splash_defconfig.patch \
+    file://Change_model_NV_dts.patch \
+"
 SRCREV = "4dc6b5ff30dab74920639b6f4126977425d15236"
 LOCALVERSION = "-${SRCBRANCH}"
 
